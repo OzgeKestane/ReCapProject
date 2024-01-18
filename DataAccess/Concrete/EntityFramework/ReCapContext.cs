@@ -4,16 +4,16 @@ using Microsoft.EntityFrameworkCore;
 namespace DataAccess.Concrete.EntityFramework
 {
     public class ReCapContext : DbContext
+
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=OZGEKESTANE;Database=ReCapProject;Integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=OZGEKESTANE;Database=ReCapProject;Trusted_Connection=true;TrustServerCertificate = True;");
+
         }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Brand> Brands { get; set; }
         public DbSet<Color> Colors { get; set; }
-
-
 
     }
 }
