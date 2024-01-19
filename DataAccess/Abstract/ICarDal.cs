@@ -1,4 +1,6 @@
-﻿using Entities.Concrete;
+﻿using Core.DataAccess;
+using Entities.Concrete;
+using Entities.Dtos;
 
 namespace DataAccess.Abstract
 {
@@ -9,5 +11,6 @@ namespace DataAccess.Abstract
         //void Delete(Car car);
         //void Update(Car car);
         //List<Car> GetById(int carId);
+        List<CarDetailDto> GetCarDetails();
     }
 }

@@ -1,10 +1,10 @@
-﻿using Entities.Abstract;
+﻿using Core.Entities;
 
 namespace Entities.Concrete
 {
     public class Brand : IEntity
     {
         public int BrandId { get; set; }
-        public string Name { get; set; } = null!;
+        public string BrandName { get; set; } = null!;
     }
 }

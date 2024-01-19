@@ -1,4 +1,5 @@
 ﻿using Entities.Concrete;
+using Entities.Dtos;
 
 namespace Business.Abstract
 {
@@ -12,5 +13,6 @@ namespace Business.Abstract
         List<Car> GetAllByCarName(string name);
         List<Car> GetAllByDailyPrice(decimal min);
 
+        List<CarDetailDto> GetCarDetails();
     }
 }

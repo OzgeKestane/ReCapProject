@@ -1,28 +1,27 @@
 ﻿using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
 
-CarManager carManager = new CarManager(new EfCarDal());
-foreach (var car in carManager.GetAllByCarName("bmw"))
+//CarName();
+
+
+try
 {
-    Console.WriteLine(car.Name + "fiyat : " + car.DailyPrice);
+    CarManager carManager = new CarManager(new EfCarDal());
+    foreach (var car in carManager.GetCarDetails())
+    {
+        Console.WriteLine(car.CarId + " - " + car.BrandName + " - " + car.ColorName + " - " + car.DailyPrice);
+    }
 }
-//ReCapContext reCapContext = new ReCapContext();
-//foreach (var item in reCapContext.Cars)
-//{
-//    Console.WriteLine(item.Name);
-//}
-//try
-//{
-//    ReCapContext reCapContext = new ReCapContext();
+catch (Exception ex)
+{
 
-
-//    foreach (var item in reCapContext.Cars)
-//    {
-//        Console.WriteLine(item.Name);
-//    }
-//}
-//catch (Exception ex)
-//{
-
-//    Console.WriteLine($"An error occurred: {ex.Message}");
-//}
+    Console.WriteLine($"An error occurred: {ex.Message}");
+}
+static void CarName()
+{
+    CarManager carManager = new CarManager(new EfCarDal());
+    foreach (var car in carManager.GetAllByCarName("bmw"))
+    {
+        Console.WriteLine(car.CarName + "fiyat : " + car.DailyPrice);
+    }
+}
